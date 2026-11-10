@@ -1,0 +1,787 @@
+
+
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta name="theme-color" content="#171512">
+
+<title>ÉCLAT BEAUTY STUDIO | Salon de coiffure</title>
+
+<meta name="description" content="ÉCLAT BEAUTY STUDIO : coiffure, tresses, soins capillaires et beauté. Réservez votre rendez-vous.">
+
+<style>
+
+:root{
+
+--dark:#171512;
+
+--gold:#c49a58;
+
+--cream:#f7f2e9;
+
+--white:#fff;
+
+--muted:#77716a;
+
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+
+body{font-family:Arial,sans-serif;background:var(--cream);color:var(--dark);line-height:1.6}
+
+.container{width:min(1120px,92%);margin:auto}
+
+a{text-decoration:none;color:inherit}
+
+img{width:100%;display:block}
+
+header{
+
+position:sticky;top:0;z-index:100;
+
+background:#171512;color:white;
+
+border-bottom:1px solid #c49a58;
+
+}
+
+.nav{
+
+min-height:75px;display:flex;
+
+align-items:center;justify-content:space-between;
+
+gap:15px
+
+}
+
+.logo{font-family:Georgia,serif;font-size:23px;color:#e6c38a;font-weight:bold}
+
+.logo span{display:block;font-size:9px;letter-spacing:4px;text-align:center;color:white}
+
+nav{display:flex;align-items:center;gap:22px}
+
+nav a{font-size:13px;font-weight:bold}
+
+nav a:hover{color:#e6c38a}
+
+.menu{display:none;background:none;border:1px solid #c49a58;color:white;padding:8px 12px;border-radius:7px;font-size:20px}
+
+.btn{
+
+display:inline-block;background:var(--gold);
+
+color:#171512;padding:13px 20px;
+
+border-radius:5px;font-weight:bold;
+
+border:0;cursor:pointer;text-align:center
+
+}
+
+.btn:hover{background:#e0b979}
+
+.btn-dark{background:#171512;color:white}
+
+.hero{
+
+min-height:570px;
+
+display:flex;align-items:center;
+
+color:white;
+
+background:linear-gradient(90deg,rgba(15,13,11,.91),rgba(15,13,11,.30)),
+
+url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=85') center/cover;
+
+}
+
+.hero-content{max-width:650px;padding:90px 0}
+
+.eyebrow{color:#e6c38a;letter-spacing:4px;font-size:12px;font-weight:bold}
+
+.hero h1{font-family:Georgia,serif;font-size:clamp(42px,7vw,72px);line-height:1.1;margin:20px 0}
+
+.hero p{font-size:17px;color:#eee;margin-bottom:28px;max-width:520px}
+
+section{padding:80px 0}
+
+.heading{text-align:center;max-width:650px;margin:0 auto 40px}
+
+.heading small{color:#a47737;font-weight:bold;letter-spacing:3px}
+
+.heading h2{font-family:Georgia,serif;font-size:36px;margin:8px 0}
+
+.heading p{color:var(--muted)}
+
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+
+.intro img{height:390px;object-fit:cover;border-radius:8px}
+
+.intro h2{font-family:Georgia,serif;font-size:36px;margin:12px 0}
+
+.intro p{color:var(--muted);margin-bottom:15px}
+
+.gold{color:#a47737;font-weight:bold;letter-spacing:2px;font-size:12px}
+
+.services{background:white}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+.card{background:var(--cream);border-radius:8px;overflow:hidden}
+
+.card img{height:230px;object-fit:cover}
+
+.card-content{padding:20px}
+
+.card h3{font-family:Georgia,serif;font-size:22px;margin-bottom:7px}
+
+.card p{font-size:14px;color:var(--muted)}
+
+.price{display:block;color:#9c7134;font-size:19px;font-weight:bold;margin-top:12px}
+
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+
+.gallery-grid img{height:300px;object-fit:cover;border-radius:7px;transition:transform .3s}
+
+.gallery-grid img:hover{transform:scale(1.025)}
+
+.advantages{background:#171512;color:white}
+
+.advantages .heading h2{color:white}
+
+.advantages .heading p{color:#c8c1b7}
+
+.adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+
+.adv{text-align:center;padding:25px;border:1px solid #55452e;border-radius:8px}
+
+.adv .icon{font-size:34px;color:#e6c38a}
+
+.adv h3{color:#e6c38a;margin:12px 0}
+
+.adv p{font-size:14px;color:#c8c1b7}
+
+.booking{background:white}
+
+.form{max-width:700px;margin:auto;background:var(--cream);padding:28px;border-radius:10px}
+
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+.field{display:flex;flex-direction:column;gap:7px}
+
+.full{grid-column:1/-1}
+
+label{font-size:13px;font-weight:bold}
+
+input,select,textarea{
+
+width:100%;padding:14px;border:1px solid #ddd;
+
+border-radius:5px;background:white;font:inherit
+
+}
+
+textarea{min-height:100px}
+
+.form button{width:100%;margin-top:18px}
+
+.note{font-size:12px;color:var(--muted);margin-top:12px}
+
+.contact{background:#eae0d0;text-align:center}
+
+.contact-box{max-width:700px;margin:auto}
+
+.contact-box h2{font-family:Georgia,serif;font-size:35px;margin:10px}
+
+.contact-box p{color:var(--muted);margin:8px}
+
+.contact-box .btn{margin-top:20px}
+
+footer{background:#171512;color:white;text-align:center;padding:35px 15px}
+
+footer strong{color:#e6c38a;font-family:Georgia,serif;font-size:22px}
+
+footer p{font-size:13px;color:#c8c1b7;margin-top:7px}
+
+footer a{color:#e6c38a}
+
+.whatsapp{
+
+position:fixed;bottom:18px;right:18px;
+
+background:#159d55;color:white;
+
+padding:13px 17px;border-radius:40px;
+
+font-weight:bold;z-index:90;box-shadow:0 4px 15px #0003
+
+}
+
+@media(max-width:800px){
+
+.menu{display:block}
+
+nav{
+
+display:none;position:absolute;top:75px;left:0;right:0;
+
+background:#171512;padding:20px;
+
+flex-direction:column;align-items:stretch
+
+}
+
+nav.open{display:flex}
+
+nav a{padding:10px;border-bottom:1px solid #ffffff20}
+
+.grid{grid-template-columns:repeat(2,1fr)}
+
+.intro{grid-template-columns:1fr}
+
+.adv-grid{grid-template-columns:1fr}
+
+}
+
+@media(max-width:550px){
+
+section{padding:55px 0}
+
+.hero{min-height:520px}
+
+.hero h1{font-size:45px}
+
+.grid,.gallery-grid{grid-template-columns:1fr}
+
+.gallery-grid img{height:320px}
+
+.form-grid{grid-template-columns:1fr}
+
+.full{grid-column:auto}
+
+.form{padding:18px}
+
+.heading h2{font-size:30px}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container nav">
+
+<a href="#accueil" class="logo">
+
+ÉCLAT
+
+<span>BEAUTY STUDIO</span>
+
+</a>
+
+<button class="menu" id="menu">☰</button>
+
+<nav id="nav">
+
+<a href="#accueil">Accueil</a>
+
+<a href="#apropos">À propos</a>
+
+<a href="#services">Services</a>
+
+<a href="#galerie">Galerie</a>
+
+<a href="#reservation">Réservation</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<main>
+
+<section class="hero" id="accueil">
+
+<div class="container hero-content">
+
+<span class="eyebrow">BIENVENUE CHEZ ÉCLAT BEAUTY STUDIO</span>
+
+<h1>Révélez votre beauté et votre élégance.</h1>
+
+<p>Découvrez un espace dédié à votre beauté, à votre style et au bien-être de vos cheveux.</p>
+
+<a href="#reservation" class="btn">Réserver un rendez-vous →</a>
+
+</div>
+
+</section>
+
+<section id="apropos">
+
+<div class="container intro">
+
+<img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=85" alt="Intérieur d'un salon de coiffure" loading="lazy">
+
+<div>
+
+<span class="gold">NOTRE UNIVERS</span>
+
+<h2>Votre beauté mérite le meilleur.</h2>
+
+<p>ÉCLAT BEAUTY STUDIO est un salon de coiffure dédié à la beauté et au soin des cheveux.</p>
+
+<p>Notre équipe vous accompagne avec professionnalisme pour vous proposer des coiffures adaptées à votre personnalité.</p>
+
+<p>Notre priorité : votre satisfaction et votre élégance.</p>
+
+<a href="#services" class="btn btn-dark">Découvrir nos services</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="services" id="services">
+
+<div class="container">
+
+<div class="heading">
+
+<small>NOS PRESTATIONS</small>
+
+<h2>Nos services</h2>
+
+<p>Découvrez nos prestations de coiffure et de beauté.</p>
+
+</div>
+
+<div class="grid">
+
+<article class="card">
+
+<img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=80" alt="Coiffure tresses">
+
+<div class="card-content">
+
+<h3>Tresses africaines</h3>
+
+<p>Des tresses élégantes adaptées à votre style.</p>
+
+<span class="price">À partir de 5 000 FCFA</span>
+
+</div>
+
+</article>
+
+<article class="card">
+
+<img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=700&q=80" alt="Coiffure femme">
+
+<div class="card-content">
+
+<h3>Coiffure femme</h3>
+
+<p>Des coiffures modernes pour toutes les occasions.</p>
+
+<span class="price">À partir de 3 000 FCFA</span>
+
+</div>
+
+</article>
+
+<article class="card">
+
+<img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=700&q=80" alt="Coupe homme">
+
+<div class="card-content">
+
+<h3>Coupe homme</h3>
+
+<p>Des coupes soignées et modernes.</p>
+
+<span class="price">À partir de 2 000 FCFA</span>
+
+</div>
+
+</article>
+
+<article class="card">
+
+<img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=700&q=80" alt="Soin cheveux">
+
+<div class="card-content">
+
+<h3>Soins capillaires</h3>
+
+<p>Des soins pour entretenir et embellir vos cheveux.</p>
+
+<span class="price">À partir de 3 500 FCFA</span>
+
+</div>
+
+</article>
+
+<article class="card">
+
+<img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=700&q=80" alt="Brushing">
+
+<div class="card-content">
+
+<h3>Brushing</h3>
+
+<p>Une finition soignée pour un résultat élégant.</p>
+
+<span class="price">À partir de 2 500 FCFA</span>
+
+</div>
+
+</article>
+
+<article class="card">
+
+<img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=80" alt="Coiffure spéciale">
+
+<div class="card-content">
+
+<h3>Coiffure événementielle</h3>
+
+<p>Une coiffure spéciale pour vos cérémonies.</p>
+
+<span class="price">À partir de 7 000 FCFA</span>
+
+</div>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="galerie">
+
+<div class="container">
+
+<div class="heading">
+
+<small>INSPIRATION</small>
+
+<h2>Notre galerie</h2>
+
+<p>Quelques inspirations pour votre prochaine coiffure.</p>
+
+</div>
+
+<div class="gallery-grid">
+
+<img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=700&q=85" alt="Style de coiffure">
+
+<img src="https://images.unsplash.com/photo-1595152452543-e5fc28ebc2b8?auto=format&fit=crop&w=700&q=85" alt="Coiffure">
+
+<img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=700&q=85" alt="Style de cheveux">
+
+</div>
+
+</div>
+
+</section>
+
+<section class="advantages">
+
+<div class="container">
+
+<div class="heading">
+
+<small>POURQUOI NOUS CHOISIR</small>
+
+<h2>Votre satisfaction, notre priorité.</h2>
+
+<p>Un accueil chaleureux et une attention particulière à chaque client.</p>
+
+</div>
+
+<div class="adv-grid">
+
+<div class="adv">
+
+<div class="icon">✦</div>
+
+<h3>Professionnalisme</h3>
+
+<p>Une attention particulière à la qualité de chaque prestation.</p>
+
+</div>
+
+<div class="adv">
+
+<div class="icon">♡</div>
+
+<h3>Accueil chaleureux</h3>
+
+<p>Un environnement agréable et convivial.</p>
+
+</div>
+
+<div class="adv">
+
+<div class="icon">✂</div>
+
+<h3>Style personnalisé</h3>
+
+<p>Des coiffures adaptées à vos envies.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="booking" id="reservation">
+
+<div class="container">
+
+<div class="heading">
+
+<small>PRENEZ RENDEZ-VOUS</small>
+
+<h2>Réservez votre coiffure</h2>
+
+<p>Remplissez le formulaire et envoyez votre demande directement sur WhatsApp.</p>
+
+</div>
+
+<form class="form" id="bookingForm">
+
+<div class="form-grid">
+
+<div class="field">
+
+<label for="nom">Votre nom *</label>
+
+<input id="nom" required placeholder="Votre nom">
+
+</div>
+
+<div class="field">
+
+<label for="telephone">Téléphone *</label>
+
+<input id="telephone" type="tel" required placeholder="Votre numéro">
+
+</div>
+
+<div class="field">
+
+<label for="prestation">Prestation *</label>
+
+<select id="prestation" required>
+
+<option value="">Choisir une prestation</option>
+
+<option>Tresses africaines</option>
+
+<option>Coiffure femme</option>
+
+<option>Coupe homme</option>
+
+<option>Soins capillaires</option>
+
+<option>Brushing</option>
+
+<option>Coiffure événementielle</option>
+
+</select>
+
+</div>
+
+<div class="field">
+
+<label for="date">Date souhaitée *</label>
+
+<input id="date" type="date" required>
+
+</div>
+
+<div class="field">
+
+<label for="heure">Heure souhaitée *</label>
+
+<input id="heure" type="time" required>
+
+</div>
+
+<div class="field full">
+
+<label for="details">Informations supplémentaires</label>
+
+<textarea id="details" placeholder="Précisez votre demande..."></textarea>
+
+</div>
+
+</div>
+
+<p class="note">Votre réservation sera transmise par WhatsApp. Elle devra être confirmée par le salon.</p>
+
+<button class="btn" type="submit">📱 Réserver sur WhatsApp</button>
+
+</form>
+
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<div class="container contact-box">
+
+<span class="gold">CONTACTEZ-NOUS</span>
+
+<h2>Nous serons ravis de vous accueillir.</h2>
+
+<p>ÉCLAT BEAUTY STUDIO</p>
+
+<p>Adresse : Abidjan, Côte d'Ivoire (adresse fictive de démonstration)</p>
+
+<p>Horaires : Lundi au samedi, 08h00 – 19h00</p>
+
+<a class="btn" href="#reservation">Prendre rendez-vous</a>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<strong>ÉCLAT BEAUTY STUDIO</strong>
+
+<p>Votre beauté, notre passion.</p>
+
+<p>Site de démonstration réalisé par <a href="https://dioa1009060001.github.io/Diom--Service/">DIOM SERVICE</a></p>
+
+<p>© <span id="year"></span> Tous droits réservés.</p>
+
+</footer>
+
+<a class="whatsapp" href="#reservation">WhatsApp ✆</a>
+
+<script>
+
+// À CONFIGURER AVANT PUBLICATION : numéro WhatsApp du salon
+
+const WHATSAPP_NUMBER = "2250000000000";
+
+document.getElementById("menu").addEventListener("click",()=>{
+
+document.getElementById("nav").classList.toggle("open");
+
+});
+
+document.querySelectorAll("nav a").forEach(a=>{
+
+a.addEventListener("click",()=>{
+
+document.getElementById("nav").classList.remove("open");
+
+});
+
+});
+
+const dateInput=document.getElementById("date");
+
+const today=new Date();
+
+const localDate=new Date(today.getTime()-today.getTimezoneOffset()*60000);
+
+dateInput.min=localDate.toISOString().split("T")[0];
+
+document.getElementById("bookingForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const nom=document.getElementById("nom").value.trim();
+
+const telephone=document.getElementById("telephone").value.trim();
+
+const prestation=document.getElementById("prestation").value;
+
+const date=document.getElementById("date").value;
+
+const heure=document.getElementById("heure").value;
+
+const details=document.getElementById("details").value.trim();
+
+const message=[
+
+"✨ DEMANDE DE RENDEZ-VOUS",
+
+"ÉCLAT BEAUTY STUDIO",
+
+"",
+
+"Nom : "+nom,
+
+"Téléphone : "+telephone,
+
+"Prestation : "+prestation,
+
+"Date souhaitée : "+date,
+
+"Heure souhaitée : "+heure,
+
+"Détails : "+(details||"Aucun"),
+
+"",
+
+"Merci de confirmer mon rendez-vous."
+
+].join("\n");
+
+if(WHATSAPP_NUMBER==="2250000000000"){
+
+alert("Le formulaire fonctionne ! Pour envoyer la réservation, le numéro WhatsApp du salon doit d'abord être configuré dans le code.");
+
+return;
+
+}
+
+window.open(
+
+"https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message),
+
+"_blank"
+
+);
+
+});
+
+document.getElementById("year").textContent=new Date().getFullYear();
+
+</script>
+
+</body>
+
+</html>
